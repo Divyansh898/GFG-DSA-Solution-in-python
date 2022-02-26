@@ -1,0 +1,11 @@
+def MedianOfArrays( array1, array2):
+        array1=sorted(array1+array2)
+        array2.clear()
+        if len(array1)%2==0:
+            m=(array1[len(array1)//2]+array1[(len(array1)//2)-1])/2
+            if m%2==0.0 or m%2==1.0:
+                return int(m)
+            else:
+                return m
+        else:
+            return array1[len(array1)//2]
