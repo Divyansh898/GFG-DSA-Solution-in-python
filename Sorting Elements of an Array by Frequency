@@ -1,0 +1,16 @@
+class Solution:
+   
+    #Function to sort the array according to frequency of elements.
+    def sortByFreq(self,a,n):
+       #code here
+        li = []
+        out = []
+        d = dict()
+        for i in a:
+            d[i] = d.get(i, 0) + 1
+        comp = lambda kv: (-kv[1], kv[0])
+        x = sorted(d.items(), key=comp)
+        for k, v in x:
+            for i in range (v):
+                out.append(k)
+        return out
