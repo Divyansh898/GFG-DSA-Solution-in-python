@@ -1,0 +1,16 @@
+import re
+class Solution:
+   def smallestSubstring(self, s):
+       x1=re.findall('[0][1]+[2]',s)
+       x2=re.findall('[0][2]+[1]',s)
+       x3=re.findall('[1][0]+[2]',s)
+       x4=re.findall('[1][2]+[0]',s)
+       x5=re.findall('[2][0]+[1]',s)
+       x6=re.findall('[2][1]+[0]',s)
+       a=x1+x2+x3+x4+x5+x6
+       #print(a)
+       a=sorted(a,key=len)
+       if len(a)==0:
+           return -1
+       else:
+           return len(a[0])
