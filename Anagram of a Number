@@ -1,0 +1,10 @@
+def remAnagram(str1,str2):
+    ar1=list(str1)
+    ar2=list(str2)
+    same=[]
+    for i in str1:
+        if i in ar2:
+            same.append(i)
+            ar2.remove(i)
+            ar1.remove(i)
+    return len(ar1)+len(ar2)
