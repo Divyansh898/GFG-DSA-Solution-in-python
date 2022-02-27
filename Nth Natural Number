@@ -1,0 +1,9 @@
+class Solution:
+    def findNth(self, N, M:int=9):
+        alpha, beta=0, 1
+        while( N>0 ):
+            alpha += (beta * (int(N)%M))
+            N/=M
+            beta*=10
+        
+        return alpha
