@@ -1,0 +1,37 @@
+    def findSwapValues(self,A, n, B, m):
+        r=sum(A)
+        l=sum(B)
+        A.sort()
+        B.sort()
+        # e=abs(l-r)
+        
+        i=0
+        j=0
+        while i<n and j<m:
+            if r-A[i]+B[j]==l-B[j]+A[i]:
+                return 1
+                
+            if r-A[i]+B[j]>l-B[j]+A[i]:
+                i+=1
+            
+            else:
+                j+=1
+        return -1
+            
+        # Your code goes here
+
+#{ 
+#  Driver Code Starts
+if __name__ == '__main__': 
+    
+    
+    t=int(input())
+    for _ in range(0,t):
+        l=list(map(int,input().split()))
+        n=l[0]
+        m=l[1]
+        a = list(map(int,input().split()))
+        b = list(map(int, input().split()))
+        ob = Solution()
+        print(ob.findSwapValues(a,n,b,m))
+# } Driver Code Ends
