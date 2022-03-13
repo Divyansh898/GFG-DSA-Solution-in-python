@@ -1,0 +1,28 @@
+class Solution:
+
+    def printLargest(self,arr):
+        l=[str(i) for i in arr]
+        l.sort(key=functools.cmp_to_key(lambda x,y: 1 if x+y>y+x else 0 if x+y==y+x else -1),reverse=True)
+        k=''.join(l)
+        return k
+            
+        # code here
+
+
+#{ 
+#  Driver Code Starts
+#Initial Template for Python 3
+
+import functools
+
+if __name__ == '__main__':
+    tc = int(input())
+    while tc > 0:
+        n = int(input())
+        arr = list(map(str, input().strip().split()))
+        ob = Solution()
+        ans = ob.printLargest(arr)
+        print(ans)
+        tc -= 1
+
+# } Driver Code Ends
