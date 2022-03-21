@@ -1,0 +1,27 @@
+
+class Solution:
+    def minRepeats(self, A, B):
+        for b in B:
+            if b not in A:
+                return -1
+        tmp=""
+        for i in range(1000):
+            if B in tmp:
+                return i
+            tmp+=A
+        return -1
+        # code here 
+
+#{ 
+#  Driver Code Starts
+#Initial Template for Python 3
+
+if __name__ == '__main__': 
+    t = int (input ())
+    for _ in range (t):
+        A=input()
+        B=input()
+        
+        ob = Solution()
+        print(ob.minRepeats(A,B))
+# } Driver Code Ends
